@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import { LocalTime } from "@/components/local-time";
 import { gsap, useGSAP, onIntroDone } from "@/lib/gsap";
 import { profile } from "@/data/content";
 
@@ -51,10 +50,6 @@ export function Nav() {
           <span className="size-2 rounded-full bg-pink" />
           <Roll>{profile.name}</Roll>
         </a>
-
-        <p data-nav-item className="eyebrow pointer-events-auto hidden rounded-full border border-fg/10 bg-bg-raised px-4 py-2.5 text-fg-soft lg:block">
-          {profile.location} · <LocalTime /> IST
-        </p>
 
         <ul data-nav-item className="eyebrow pointer-events-auto flex items-center gap-1 rounded-full border border-fg/10 bg-bg-raised p-1 text-fg">
           {links.map((l) => (
