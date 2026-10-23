@@ -70,8 +70,14 @@ export function Work() {
             });
 
             if (reduce) return;
-            panels.forEach((panel) => {
-              const st: ST = (extra = {}) => ({ trigger: panel, containerAnimation: scroll, ...extra });
+            panels.forEach((panel, i) => {
+              // The first panel is already on screen when the horizontal run
+              // starts, so a "slides in from the right" trigger would never fire
+              // and its text would stay hidden. Reveal it as the section arrives.
+              const st: ST = (extra = {}) =>
+                i === 0 && !extra.scrub
+                  ? { trigger: pin.current, start: "top 55%" }
+                  : { trigger: panel, containerAnimation: scroll, ...extra };
               posterAnims(panel, st);
               const art = panel.querySelector("[data-art]");
               if (art) gsap.fromTo(art, { xPercent: -10 }, { xPercent: 10, ease: "none", scrollTrigger: st({ scrub: true, start: "left right", end: "right left" }) });

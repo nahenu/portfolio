@@ -28,11 +28,6 @@ export function Toolbox() {
         ease: "back.out(1.2)",
         scrollTrigger: { trigger: "[data-desk-panel]", start: "top 75%" },
       });
-      gsap.fromTo(
-        "[data-desk-panel]",
-        { rotate: -3 },
-        { rotate: 2, ease: "none", scrollTrigger: { trigger: "[data-desk-panel]", start: "top bottom", end: "bottom top", scrub: true } },
-      );
     },
     { scope: root },
   );

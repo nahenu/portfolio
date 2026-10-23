@@ -3,7 +3,6 @@
 import { useRef, useState } from "react";
 import { useLenis } from "lenis/react";
 import { Magnetic } from "@/components/magnetic";
-import { LocalTime } from "@/components/local-time";
 import { gsap, useGSAP, SplitText } from "@/lib/gsap";
 import { profile } from "@/data/content";
 
@@ -66,9 +65,6 @@ export function Contact() {
             <p className="flex items-center gap-3">
               <span className="grid size-9 place-items-center rounded-full bg-bg text-sm font-bold text-fg">07</span>
               Contact
-            </p>
-            <p>
-              {profile.location} · <LocalTime withSeconds /> IST
             </p>
           </div>
 

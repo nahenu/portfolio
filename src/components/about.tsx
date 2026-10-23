@@ -167,12 +167,13 @@ export function About() {
               <li
                 key={f.big}
                 data-fact
-                className={`flex aspect-[5/4] flex-col justify-between rounded-2xl p-4 lg:aspect-square ${
+                className={`@container flex aspect-[5/4] flex-col justify-between rounded-2xl p-4 lg:aspect-square ${
                   ["bg-pink text-bg", "bg-blue text-fg", "bg-fg text-bg", "border border-line text-fg"][i % 4]
                 }`}
               >
                 <span className="eyebrow opacity-75">{f.small}</span>
-                <span className="display text-[clamp(1.8rem,2.6vw,2.6rem)]">{f.big}</span>
+                {/* Sized off the tile's own width (cqw) so long words like TYPESCRIPT always fit */}
+                <span className="display text-[min(2.6rem,15cqw)]">{f.big}</span>
               </li>
             ))}
           </ul>
