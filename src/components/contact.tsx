@@ -17,6 +17,7 @@ export function Contact() {
   const links = [
     { label: "Email", href: `mailto:${profile.email}` },
     { label: "Résumé", href: profile.resume },
+    { label: "Cover letter", href: profile.coverLetter },
     { label: "LinkedIn", href: profile.linkedin },
     { label: "GitHub", href: profile.github },
   ].filter((l) => l.href);

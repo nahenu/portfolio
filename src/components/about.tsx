@@ -190,6 +190,7 @@ export function About() {
                   <span>
                     <span className="block text-lg font-semibold">{c.role}</span>
                     <span className="text-sm text-fg-soft">{c.place}</span>
+                    {c.note && <span className="mt-1 block text-sm text-fg-mute">{c.note}</span>}
                   </span>
                   <span className="eyebrow text-fg-soft">{c.when}</span>
                 </li>

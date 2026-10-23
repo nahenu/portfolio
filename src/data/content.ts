@@ -9,6 +9,7 @@ export const profile = {
   timezone: "Asia/Kolkata",
   email: "arpitgoyal841@gmail.com",
   resume: "/arpit-goyal-resume.pdf",
+  coverLetter: "/arpit-goyal-cover-letter.pdf",
   // Fill these in — links with an empty string are hidden on the site.
   linkedin: "",
   github: "",
@@ -21,7 +22,7 @@ export const intro =
 export const facts = [
   { small: "Based in", big: "Agra" },
   { small: "B.Tech, CSE", big: "Class of '24" },
-  { small: "Ships faster with", big: "Claude" },
+  { small: "Also writes", big: "TypeScript" },
   { small: "Side products", big: "2 live" },
 ];
 
@@ -50,7 +51,7 @@ export const numbers = [
     value: 50,
     suffix: "+",
     label: "Daily users, zero ads",
-    note: "On a side project I built and shipped in a single day.",
+    note: "On TextToHand AI, a side product I built and launched myself.",
   },
 ];
 
@@ -123,13 +124,13 @@ export const projects: Project[] = [
     kind: "Group brand storefront",
     role: "UI + integrations",
     summary:
-      "UI and frontend integrations for a HomeLane group brand that closed ₹1 Cr+ in a single quarter. The full payment flow went in within 30 minutes with AI-assisted development.",
+      "UI and frontend integrations for a HomeLane group brand that closed ₹1 Cr+ in a single quarter. I also integrated the end-to-end payment flow on the frontend.",
     detail: [
       "UI build and frontend integrations",
       "Payment gateway, end to end",
       "Lead attribution with first-touch source tracking",
     ],
-    stack: ["Next.js", "Payments", "Tailwind", "AI-assisted"],
+    stack: ["Next.js", "Payments", "Tailwind", "REST APIs"],
     visual: "tiles",
     tone: "#f4f1ec",
   },
@@ -167,7 +168,7 @@ export const sideProjects = [
     name: "TextToHand AI",
     url: "https://texttohandai.com",
     host: "texttohandai.com",
-    line: "Type text, get it back as handwriting. Idea to live product in one day, built with Claude. 50+ daily users from search alone.",
+    line: "Type text, get it back as handwriting. Designed, built and launched end to end — 50+ daily users from organic search, zero ad spend.",
   },
   {
     name: "AgeCalcNow",
@@ -180,7 +181,7 @@ export const sideProjects = [
 export const stack = [
   {
     group: "Build",
-    items: ["JavaScript (ES6+)", "React.js", "Next.js", "Redux", "HTML5 / CSS3"],
+    items: ["JavaScript (ES6+)", "TypeScript", "React.js", "Next.js", "Redux", "HTML5 / CSS3"],
   },
   {
     group: "Style",
@@ -196,7 +197,7 @@ export const stack = [
   },
   {
     group: "Also",
-    items: ["Node.js", "Express", "MongoDB", "Redis", "Git"],
+    items: ["Node.js", "Express", "MongoDB", "Redis", "Git", "Claude AI"],
   },
 ];
 
@@ -210,7 +211,7 @@ export const tickerWords = [
   "WebEngage",
   "Clarity",
   "Lead funnels",
-  "Claude",
+  "TypeScript",
 ];
 
 export const career = [
@@ -223,6 +224,7 @@ export const career = [
     place: "HomeLane",
     role: "Frontend Intern",
     when: "Feb — Apr 2024",
+    note: "Built an interactive data dashboard with dynamic filters.",
   },
   {
     place: "Tula's Institute, Dehradun",
