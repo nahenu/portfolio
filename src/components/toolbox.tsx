@@ -4,9 +4,9 @@ import { useRef } from "react";
 import Image from "next/image";
 import { SectionHead } from "@/components/section-head";
 import { gsap, useGSAP } from "@/lib/gsap";
-import { stack } from "@/data/content";
+import { aiTools, stack } from "@/data/content";
 
-const groupColours = ["bg-pink text-bg", "bg-blue text-fg", "bg-fg text-bg", "bg-pink text-bg", "bg-blue text-fg"];
+const groupColours = ["bg-pink text-bg", "bg-blue text-fg", "bg-fg text-bg", "bg-blue text-fg", "bg-fg text-bg", "bg-pink text-bg"];
 
 export function Toolbox() {
   const root = useRef<HTMLElement>(null);
@@ -63,7 +63,7 @@ export function Toolbox() {
         <div data-tools className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-8">
           {stack.map((g, i) => (
             <div key={g.group}>
-              <p data-tool className={`eyebrow mb-4 inline-block rounded-full px-3 py-1 font-semibold ${groupColours[i]}`}>
+              <p data-tool className={`eyebrow mb-4 inline-block rounded-full px-3 py-1 font-semibold ${groupColours[i % groupColours.length]}`}>
                 {g.group}
               </p>
               <ul className="space-y-2">
@@ -75,8 +75,9 @@ export function Toolbox() {
               </ul>
             </div>
           ))}
-          <p data-tool className="eyebrow col-span-full text-fg-soft">
-            Certified in React.js and Responsive Web Design (HTML, CSS, JavaScript)
+          <p data-tool className="eyebrow col-span-full space-y-1 text-fg-soft">
+            <span className="block">AI tools: {aiTools.join(", ")}</span>
+            <span className="block">Certified in React.js and Responsive Web Design (HTML, CSS, JavaScript)</span>
           </p>
         </div>
       </div>

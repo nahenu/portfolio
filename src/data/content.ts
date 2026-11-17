@@ -23,7 +23,7 @@ export const facts = [
   { small: "Based in", big: "Agra" },
   { small: "B.Tech, CSE", big: "Class of '24" },
   { small: "Also writes", big: "TypeScript" },
-  { small: "Side products", big: "2 live" },
+  { small: "Side projects", big: "3 live" },
 ];
 
 export const numbers = [
@@ -84,6 +84,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "Redux", "REST", "WebEngage", "Clarity"],
     visual: "orbit",
     tone: "#ff2d95",
+    href: "https://supernova.homelane.com",
   },
   {
     index: "02",
@@ -100,6 +101,7 @@ export const projects: Project[] = [
     stack: ["React", "Next.js", "Redux", "OTP", "Analytics"],
     visual: "plan",
     tone: "#007ba7",
+    href: "https://www.homelane.com/vastu",
   },
   {
     index: "03",
@@ -133,6 +135,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "Payments", "Tailwind", "REST APIs"],
     visual: "tiles",
     tone: "#f4f1ec",
+    href: "https://www.makemybath.com",
   },
 ];
 
@@ -163,18 +166,56 @@ export const shipped = [
   },
 ];
 
-export const sideProjects = [
+// Live links only — no source-code links on the site.
+export type SideProject = {
+  name: string;
+  kind: string;
+  url: string;
+  host: string;
+  stack: string[];
+  line: string;
+  points: string[];
+  demo: "vitals" | "form" | "hand";
+};
+
+export const sideProjects: SideProject[] = [
   {
-    name: "TextToHand AI",
-    url: "https://texttohandai.com",
-    host: "texttohandai.com",
-    line: "Type text, get it back as handwriting. Designed, built and launched end to end — 50+ daily users from organic search, zero ad spend.",
+    name: "VitalsWatch",
+    kind: "Website performance monitor",
+    url: "https://vitalswatch-coral.vercel.app/",
+    host: "vitalswatch-coral.vercel.app",
+    stack: ["Next.js", "TypeScript", "PostgreSQL (Neon)", "Vercel Cron", "PageSpeed Insights API"],
+    line: "Runs Lighthouse daily and tracks real-user Core Web Vitals (LCP, INP, CLS) — then points at the release that made your site slow.",
+    points: [
+      "Per-deploy before/after on 3-run medians, with email alerts on score drops",
+      "Turns Lighthouse diagnostics into copy-paste code fixes and shareable PDF reports",
+      "37 unit + 16 E2E tests in GitHub Actions",
+    ],
+    demo: "vitals",
   },
   {
-    name: "AgeCalcNow",
-    url: "https://agecalcnow.com",
-    host: "agecalcnow.com",
-    line: "Your exact age in years, months and days — with seconds that tick, a birthday countdown, life milestones and a share link.",
+    name: "FormFlow",
+    kind: "Multi-step form builder",
+    url: "https://formflow-app-six.vercel.app/",
+    host: "formflow-app-six.vercel.app",
+    stack: ["Next.js", "TypeScript", "PostgreSQL (Neon)", "Drizzle ORM", "Better Auth"],
+    line: "Drag-and-drop form builder with undo/redo, autosave and visual branching — plus per-step drop-off funnels to see where people quit.",
+    points: [
+      "One branching engine drives the preview, the live form and server-side validation",
+      "First-touch UTM attribution and a one-line embed script for any website",
+      "53 unit + 26 E2E and accessibility tests (Vitest, Playwright)",
+    ],
+    demo: "form",
+  },
+  {
+    name: "TextToHand AI",
+    kind: "Text-to-handwriting web app",
+    url: "https://www.texttohandai.com/",
+    host: "texttohandai.com",
+    stack: ["Astro", "Tailwind CSS"],
+    line: "Type text, get it back as handwriting. Designed, built and launched end to end.",
+    points: ["50+ daily users from organic search, with zero ad spend"],
+    demo: "hand",
   },
 ];
 
@@ -188,18 +229,24 @@ export const stack = [
     items: ["Tailwind CSS", "Sass", "Bootstrap", "Responsive layouts"],
   },
   {
+    group: "Backend",
+    items: ["Node.js", "Express", "PostgreSQL", "Drizzle ORM", "MongoDB", "Redis"],
+  },
+  {
     group: "Wire up",
     items: ["Strapi (headless)", "REST APIs", "OTP auth", "Payment gateways"],
   },
   {
-    group: "Measure",
-    items: ["WebEngage", "Microsoft Clarity", "Event tracking", "Lighthouse / CWV"],
+    group: "Test & ship",
+    items: ["Vitest", "Playwright", "GitHub Actions", "Vercel", "Git"],
   },
   {
-    group: "Also",
-    items: ["Node.js", "Express", "MongoDB", "Redis", "Git", "Claude AI"],
+    group: "Measure",
+    items: ["Lighthouse / CWV", "WebEngage", "Microsoft Clarity", "Event tracking"],
   },
 ];
+
+export const aiTools = ["Cursor", "Claude", "Google Antigravity"];
 
 export const tickerWords = [
   "React",
@@ -224,7 +271,7 @@ export const career = [
     place: "HomeLane",
     role: "Frontend Intern",
     when: "Feb — Apr 2024",
-    note: "Built an interactive data dashboard with dynamic filters.",
+    note: "Built an internal pricing dashboard for SpaceCraft with multi-field filters.",
   },
   {
     place: "Tula's Institute, Dehradun",
